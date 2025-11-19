@@ -14,7 +14,7 @@
             font-family: 'IBM Plex Mono', monospace;
             background-color: #0d0d0d; /* Near-black background */
             color: #ccc;
-            overflow-x: hidden;
+            overflow-x: hidden; /* Ensures no horizontal scroll */
         }
 
         /* Neon Glow Effect for Headers and Interactive Elements */
@@ -76,13 +76,6 @@
         .animate-reveal {
             animation: reveal-glitch 1s ease-in-out;
         }
-
-        /* Responsive adjustments for desktop/larger screens */
-        @media (min-width: 768px) {
-            .card-panel-lg {
-                max-width: 800px;
-            }
-        }
     </style>
 </head>
 <body class="glitch-bg min-h-screen">
@@ -111,8 +104,8 @@
         </div>
     </nav>
 
-    <!-- Main Content Area -->
-    <main id="app-root" class="pt-20 p-4 md:p-8 flex justify-center items-start min-h-[calc(100vh-80px)]">
+    <!-- Main Content Area - Reduced mobile padding (p-2) and ensured overflow is hidden -->
+    <main id="app-root" class="pt-20 p-2 md:p-8 flex justify-center items-start min-h-[calc(100vh-80px)] overflow-x-hidden">
         <!-- Content will be injected here by JavaScript -->
     </main>
 
@@ -304,7 +297,7 @@
 
         function renderHome() {
             root.innerHTML = `
-                <div class="card-panel-lg card-panel p-8 rounded-xl w-full md:w-3/4 max-w-4xl text-center">
+                <div class="card-panel p-8 rounded-xl w-full max-w-4xl text-center">
                     <h1 class="text-4xl md:text-6xl font-extrabold mb-4 neon-text">${t('appName')}</h1>
                     <p class="text-xl text-fuchsia-400 mb-8">${t('accessFuture')}</p>
                     
@@ -340,7 +333,7 @@
                 const borderColor = isReversed ? 'border-red-500' : 'border-cyan-400';
                 
                 content = `
-                    <div class="card-panel-lg card-panel p-6 md:p-10 rounded-xl w-full max-w-4xl animate-reveal">
+                    <div class="card-panel p-6 md:p-10 rounded-xl w-full max-w-4xl animate-reveal">
                         <h2 class="text-3xl font-extrabold mb-4 text-fuchsia-400">${t('readoutComplete')} ${card.name}</h2>
                         <p class="text-sm uppercase ${colorClass} mb-6">${isReversed ? t('reversedPosition') : t('uprightPosition')}</p>
                         
@@ -375,7 +368,7 @@
             } else {
                 // Initial deck view
                 content = `
-                    <div class="card-panel-lg card-panel p-8 rounded-xl w-full max-w-4xl text-center">
+                    <div class="card-panel p-8 rounded-xl w-full max-w-4xl text-center">
                         <h2 class="text-3xl font-bold mb-4 neon-text">${t('deckInterface')}</h2>
                         <p class="text-fuchsia-400 mb-8">${t('deckDesc')}</p>
                         
@@ -408,7 +401,7 @@
             `).join('');
 
             root.innerHTML = `
-                <div class="card-panel-lg card-panel p-8 rounded-xl w-full max-w-4xl">
+                <div class="card-panel p-8 rounded-xl w-full max-w-4xl">
                     <h2 class="text-3xl font-bold mb-6 neon-text border-b border-fuchsia-500 pb-3">${t('dataArchives')}</h2>
                     <div id="card-detail-view" class="mb-6">
                         <p class="text-gray-400">${t('selectNode')}</p>
