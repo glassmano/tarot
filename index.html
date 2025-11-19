@@ -171,4 +171,350 @@
                     { id: 5, name: "THE HIEROPHANT", title: "THE SECT LEADER", meaningUp: "Conformity, tradition, spiritual guidance from the old world. Following the established protocol.", meaningRev: "Rebellion, nonconformity, challenge to authority. Breaking the outdated rules.", keywords: ["Tradition", "Beliefs", "Education"] },
                     { id: 8, name: "STRENGTH", title: "THE CYBORG", meaningUp: "Courage, inner strength, mastery over desire. Seamless integration of flesh and machine.", meaningRev: "Weakness, self-doubt, lack of control. Rejecting your augmented self.", keywords: ["Bravery", "Compassion", "Patience"] },
                     { id: 10, name: "WHEEL OF FORTUNE", title: "THE ALGORITHM", meaningUp: "Change, destiny, sudden fortune. The luck loop has been activated.", meaningRev: "Bad luck, cycles ending, resistance to change. Stuck in a recurring code loop.", keywords: ["Destiny", "Cycles", "Luck"] },
-                    { id: 13, name: "DEATH", title: "THE REBOOT", meaningUp
+                    { id: 13, name: "DEATH", title: "THE REBOOT", meaningUp: "End of a cycle, transformation, profound change. Necessary system reset.", meaningRev: "Resistance to change, stuck in limbo, fear of the unknown. Refusing the system update.", keywords: ["Ending", "Transition", "Elimination"] },
+                    { id: 16, name: "THE TOWER", title: "THE SYSTEM CRASH", meaningUp: "Sudden upheaval, catastrophic failure, revelation of lies. The grid collapses.", meaningRev: "Avoiding disaster, fear of suffering, delayed destruction. A silent, festering bug.", keywords: ["Chaos", "Ruin", "Sudden Change"] },
+                ]
+            },
+            es: {
+                // UI Text (Spanish translations)
+                appName: "CIBER-ORÁCULO // 2077",
+                homeNode: "NODO_INICIO",
+                startReading: "INICIAR_LECTURA",
+                cardIndex: "ÍNDICE_CARTAS",
+                systemMessage: "MENSAJE DEL SISTEMA",
+                acknowledge: "RECONOCER [OK]",
+                accessFuture: "Accede al futuro a través de la red fracturada.",
+                initiateReadout: "INICIAR LECTURA HOLOGRÁFICA",
+                viewArchives: "VER ARCHIVOS DE DATOS",
+                protocol: "PROTOCOLO 77.01",
+                protocolDesc: "El sistema accederá aleatoriamente a un nodo del núcleo de datos del Arcano Mayor. Esta única extracción representa tu trayectoria actual. Consulta los datos. Modifica tu camino. La supervivencia es la única métrica.",
+                deckInterface: "INTERFAZ DE MAZO (ARCANO MAYOR)",
+                deckDesc: "Haz clic en la carta holográfica para obtener tu flujo de datos actual.",
+                drawCardEngage: "EXTRAER CARTA [ENGANCHE]",
+                readoutComplete: "LECTURA COMPLETA:",
+                reversedPosition: ":: POSICIÓN INVERTIDA ::",
+                uprightPosition: ":: POSICIÓN DERECHA ::",
+                systemError: "ERROR DEL SISTEMA/FALLO",
+                holographicInterpretation: "INTERPRETACIÓN HOLOGRÁFICA",
+                coreData: "PALABRAS CLAVE DEL NÚCLEO DE DATOS:",
+                reInitiate: "REINICIAR LECTURA",
+                dataArchives: "ARCHIVOS DE DATOS: NODOS DEL ARCANO MAYOR",
+                selectNode: "Selecciona un nodo de la cuadrícula a continuación para ver su especificación de datos completa.",
+                dataCorruption: "CORRUPCIÓN DE DATOS",
+                cardNotFound: "Datos de la carta solicitada no encontrados en el archivo.",
+                viewFullSpec: "VER ESPECIFICACIÓN COMPLETA",
+                closeSpec: "[CERRAR ESPEC]",
+                uprightTitle: "DERECHA (Interpretación Holográfica):",
+                reversedTitle: "INVERTIDA (Error del Sistema/Fallo):",
+
+                // Card Data
+                MAJOR_ARCANA: [
+                    { id: 0, name: "EL LOCO", title: "EL FALLO", meaningUp: "Un comienzo imprudente, potencial ilimitado, código intacto. Estás fuera del sistema.", meaningRev: "Error del sistema, autosabotaje, programación ingenua. Estás desconectado de la red.", keywords: ["Nuevos Comienzos", "Inocencia", "Riesgo"] },
+                    { id: 1, name: "EL MAGO", title: "EL CODIFICADOR", meaningUp: "Dominio de recursos, intención enfocada, control total de la matriz. La manifestación está en línea.", meaningRev: "Manipulación, habilidad no aprovechada, corrupción de datos. Tu fuente de energía está fuera de línea.", keywords: ["Habilidad", "Acción", "Enfoque"] },
+                    { id: 2, name: "LA SUMA SACERDOTISA", title: "EL ORÁCULO", meaningUp: "Intuición, conocimiento oculto, observación pasiva. Confía en el núcleo interno de IA.", meaningRev: "Secretos revelados, falta de enfoque, intuición bloqueada. El cortafuegos es demasiado fuerte.", keywords: ["Misterio", "Intuición", "Subconsciente"] },
+                    { id: 3, name: "LA EMPERATRIZ", title: "LA MEGA-CIUDAD", meaningUp: "Abundancia, nutrición, creatividad, lujo. La vida prospera en las calles de neón.", meaningRev: "Dependencia, exceso de indulgencia, bloqueo creativo. La contaminación de la ciudad es abrumadora.", keywords: ["Fertilidad", "Belleza", "Maternidad"] },
+                    { id: 4, name: "EL EMPERADOR", title: "LA RED", meaningUp: "Autoridad, estructura, control, estabilidad. La cuadrícula es estable y predecible.", meaningRev: "Dominación, rigidez, ego descontrolado. La red es demasiado opresiva.", keywords: ["Poder", "Estructura", "Disciplina"] },
+                    { id: 5, name: "EL SUMO SACERDOTE", title: "EL LÍDER DE SECTA", meaningUp: "Conformidad, tradición, guía espiritual del viejo mundo. Siguiendo el protocolo establecido.", meaningRev: "Rebeldía, inconformidad, desafío a la autoridad. Rompiendo las reglas obsoletas.", keywords: ["Tradición", "Creencias", "Educación"] },
+                    { id: 8, name: "LA FUERZA", title: "EL CIBORG", meaningUp: "Coraje, fuerza interior, dominio sobre el deseo. Integración perfecta de carne y máquina.", meaningRev: "Debilidad, duda, falta de control. Rechazando tu yo aumentado.", keywords: ["Valentía", "Compasión", "Paciencia"] },
+                    { id: 10, name: "RUEDA DE LA FORTUNA", title: "EL ALGORITMO", meaningUp: "Cambio, destino, fortuna repentina. El bucle de la suerte ha sido activado.", meaningRev: "Mala suerte, ciclos que terminan, resistencia al cambio. Atascado en un bucle de código recurrente.", keywords: ["Destino", "Ciclos", "Suerte"] },
+                    { id: 13, name: "LA MUERTE", title: "EL REINICIO", meaningUp: "Fin de un ciclo, transformación, cambio profundo. Reinicio de sistema necesario.", meaningRev: "Resistencia al cambio, estancamiento, miedo a lo desconocido. Rechazando la actualización del sistema.", keywords: ["Final", "Transición", "Eliminación"] },
+                    { id: 16, name: "LA TORRE", title: "EL COLAPSO DEL SISTEMA", meaningUp: "Cambio repentino, fallo catastrófico, revelación de mentiras. La cuadrícula se colapsa.", meaningRev: "Evitar el desastre, miedo al sufrimiento, destrucción retrasada. Un error silencioso y purulento.", keywords: ["Caos", "Ruina", "Cambio Repentino"] },
+                ]
+            }
+        };
+
+        // --- STATE MANAGEMENT ---
+        let state = {
+            view: 'home',
+            currentCard: null,
+            isReversed: false,
+            // Initialize language from local storage or default to 'en'
+            language: localStorage.getItem('cyberOracleLang') || 'en', 
+        };
+
+        const root = document.getElementById('app-root');
+        const cardBack = 'https://placehold.co/150x250/0f00ff/0d0d0d?text=CYBER+DECK\n%7B+ACCESS+DENIED+%7D'; // Neon Purple Card Back
+
+        // --- TRANSLATION FUNCTION ---
+        function t(key, lang = state.language) {
+            // Allows accessing nested data (like MAJOR_ARCANA) or simple UI keys
+            const parts = key.split('.');
+            let current = translations[lang];
+
+            for (const part of parts) {
+                if (current && current[part] !== undefined) {
+                    current = current[part];
+                } else {
+                    // Fallback to English if translation is missing
+                    const fallback = translations['en'];
+                    let fallbackCurrent = fallback;
+                    for (const fallbackPart of parts) {
+                         if (fallbackCurrent && fallbackCurrent[fallbackPart] !== undefined) {
+                             fallbackCurrent = fallbackCurrent[fallbackPart];
+                         } else {
+                             return key;
+                         }
+                    }
+                    return fallbackCurrent;
+                }
+            }
+            return current;
+        }
+
+        // --- LANGUAGE CONTROL ---
+        function setLanguage(newLang) {
+            if (state.language !== newLang) {
+                state.language = newLang;
+                localStorage.setItem('cyberOracleLang', newLang);
+                updateNavBarText(); // Update navigation text
+                handleRoute();      // Rerender current view
+            }
+        }
+
+        function updateNavBarText() {
+            document.getElementById('app-title-nav').textContent = t('appName');
+            const links = document.querySelectorAll('.nav-link');
+            links[0].textContent = t('homeNode');
+            links[1].textContent = t('startReading');
+            links[2].textContent = t('cardIndex');
+            document.getElementById('language-select').value = state.language;
+        }
+
+        // --- HELPER FUNCTIONS ---
+
+        function showModal(titleKey, content) {
+            document.getElementById('modal-title').innerText = t(titleKey);
+            document.getElementById('modal-content').innerText = content;
+            document.getElementById('app-modal').querySelector('button').innerText = t('acknowledge');
+            document.getElementById('app-modal').classList.remove('hidden');
+        }
+
+        function hideModal() {
+            document.getElementById('app-modal').classList.add('hidden');
+        }
+
+        function getCardPath(cardName) {
+            // Simplified placeholder image generation for the card face
+            const name = cardName.replace(/\s/g, '+').replace(/\/\//g, '');
+            // Using Cyan and Magenta for the face to maintain the theme
+            return `https://placehold.co/150x250/00ffff/ff00ff?text=${name}`; 
+        }
+
+        // --- VIEW RENDERING LOGIC ---
+
+        function renderHome() {
+            root.innerHTML = `
+                <div class="card-panel-lg card-panel p-8 rounded-xl w-full md:w-3/4 max-w-4xl text-center">
+                    <h1 class="text-4xl md:text-6xl font-extrabold mb-4 neon-text">${t('appName')}</h1>
+                    <p class="text-xl text-fuchsia-400 mb-8">${t('accessFuture')}</p>
+                    
+                    <div class="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
+                        <a href="#reading" class="neon-btn py-3 px-8 text-lg rounded-lg">
+                            ${t('initiateReadout')}
+                        </a>
+                        <a href="#index" class="neon-btn py-3 px-8 text-lg rounded-lg border-fuchsia-500 text-fuchsia-500 hover:border-cyan-400 hover:text-cyan-400">
+                            ${t('viewArchives')}
+                        </a>
+                    </div>
+                    
+                    <div class="mt-10 border-t border-cyan-400/50 pt-6">
+                        <h2 class="text-2xl font-bold mb-3 neon-text text-left">${t('protocol')}</h2>
+                        <p class="text-sm text-gray-400 text-left">
+                            ${t('protocolDesc')}
+                        </p>
+                    </div>
+                </div>
+            `;
+        }
+
+        function renderReading() {
+            let content;
+            if (state.currentCard) {
+                // Display the revealed card
+                const card = state.currentCard;
+                const isReversed = state.isReversed;
+                const meaning = isReversed ? card.meaningRev : card.meaningUp;
+                const meaningTitle = isReversed ? t('systemError') : t('holographicInterpretation');
+                const colorClass = isReversed ? 'text-red-500' : 'text-cyan-400';
+                const rotation = isReversed ? 'rotate-180' : 'rotate-0';
+                const borderColor = isReversed ? 'border-red-500' : 'border-cyan-400';
+                
+                content = `
+                    <div class="card-panel-lg card-panel p-6 md:p-10 rounded-xl w-full max-w-4xl animate-reveal">
+                        <h2 class="text-3xl font-extrabold mb-4 text-fuchsia-400">${t('readoutComplete')} ${card.name}</h2>
+                        <p class="text-sm uppercase ${colorClass} mb-6">${isReversed ? t('reversedPosition') : t('uprightPosition')}</p>
+                        
+                        <div class="flex flex-col md:flex-row items-start md:space-x-8">
+                            <!-- Card Image (Simulated) -->
+                            <div class="flex-shrink-0 mb-6 md:mb-0">
+                                <img src="${getCardPath(card.title)}" alt="${card.title}" 
+                                     class="w-40 h-72 object-cover ${rotation} transform transition duration-500 rounded-lg ${borderColor} border-4 mx-auto md:mx-0 shadow-2xl shadow-cyan-500/30"/>
+                                <p class="text-center mt-2 text-xl font-bold ${colorClass}">${card.title}</p>
+                            </div>
+
+                            <!-- Interpretation Panel -->
+                            <div class="flex-grow">
+                                <div class="bg-gray-800/50 p-4 rounded-lg border-l-4 ${borderColor} h-full">
+                                    <h3 class="text-xl font-bold mb-3 ${colorClass}">${meaningTitle}</h3>
+                                    <p class="text-gray-300 mb-4">${meaning}</p>
+                                    
+                                    <h4 class="text-lg font-semibold text-fuchsia-400 mt-4">${t('coreData')}</h4>
+                                    <p class="text-sm text-gray-500">${card.keywords.join(' // ')}</p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="mt-8">
+                            <button onclick="drawCard()" class="neon-btn py-3 px-8 rounded-lg text-lg w-full md:w-auto">
+                                ${t('reInitiate')}
+                            </button>
+                        </div>
+                    </div>
+                `;
+
+            } else {
+                // Initial deck view
+                content = `
+                    <div class="card-panel-lg card-panel p-8 rounded-xl w-full max-w-4xl text-center">
+                        <h2 class="text-3xl font-bold mb-4 neon-text">${t('deckInterface')}</h2>
+                        <p class="text-fuchsia-400 mb-8">${t('deckDesc')}</p>
+                        
+                        <div class="flex justify-center mb-10">
+                            <!-- Deck Image (Simulated Card Back) -->
+                            <div onclick="drawCard()" class="cursor-pointer transition duration-300 hover:scale-[1.05] hover:shadow-cyan-500/70 shadow-xl rounded-lg">
+                                <img src="${cardBack}" alt="Cyber Deck Back" class="w-40 h-72 object-cover border-4 border-fuchsia-500 rounded-lg"/>
+                            </div>
+                        </div>
+
+                        <button onclick="drawCard()" class="neon-btn py-3 px-8 rounded-lg text-lg">
+                            ${t('drawCardEngage')}
+                        </button>
+                    </div>
+                `;
+            }
+            root.innerHTML = content;
+        }
+
+        function renderIndex() {
+            const currentArcana = t('MAJOR_ARCANA');
+            const cardList = currentArcana.map(card => `
+                <div class="card-panel p-4 rounded-lg transition duration-200 hover:bg-gray-800/50 hover:shadow-lg hover:shadow-cyan-400/20">
+                    <h3 class="text-xl font-bold text-cyan-400">${card.name} <span class="text-fuchsia-500">(${card.title})</span></h3>
+                    <p class="text-sm text-gray-400 mt-1">${card.keywords.join(' // ')}</p>
+                    <button onclick="viewCardDetails('${card.name}')" class="text-xs mt-3 neon-text border-b border-cyan-400/50">
+                        ${t('viewFullSpec')}
+                    </button>
+                </div>
+            `).join('');
+
+            root.innerHTML = `
+                <div class="card-panel-lg card-panel p-8 rounded-xl w-full max-w-4xl">
+                    <h2 class="text-3xl font-bold mb-6 neon-text border-b border-fuchsia-500 pb-3">${t('dataArchives')}</h2>
+                    <div id="card-detail-view" class="mb-6">
+                        <p class="text-gray-400">${t('selectNode')}</p>
+                    </div>
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        ${cardList}
+                    </div>
+                </div>
+            `;
+        }
+        
+        // --- CONTROLLER FUNCTIONS ---
+
+        function viewCardDetails(cardName) {
+            // Find the card in the CURRENT language's data set
+            const currentArcana = t('MAJOR_ARCANA');
+            const card = currentArcana.find(c => c.name === cardName);
+            
+            if (!card) {
+                showModal('dataCorruption', t('cardNotFound'));
+                return;
+            }
+
+            const detailHtml = `
+                <div class="p-4 mb-6 bg-gray-800 rounded-lg border-2 border-cyan-400">
+                    <h3 class="text-2xl font-bold neon-text mb-3">${card.name} - ${card.title}</h3>
+                    <div class="md:flex md:space-x-6">
+                        <div class="flex-shrink-0 mb-4 md:mb-0">
+                             <img src="${getCardPath(card.title)}" alt="${card.title}" 
+                                     class="w-24 h-40 object-cover rounded-md border border-fuchsia-500 mx-auto md:mx-0"/>
+                        </div>
+                        <div class="flex-grow">
+                            <p class="text-fuchsia-400 font-semibold">${t('uprightTitle')}</p>
+                            <p class="text-gray-300 text-sm mb-3">${card.meaningUp}</p>
+                            <p class="text-red-500 font-semibold">${t('reversedTitle')}</p>
+                            <p class="text-gray-300 text-sm mb-3">${card.meaningRev}</p>
+                            <p class="text-xs text-gray-500">${t('coreData')}: ${card.keywords.join(', ')}</p>
+                        </div>
+                    </div>
+                    <button onclick="document.getElementById('card-detail-view').innerHTML = '<p class=\\'text-gray-400\\'>${t('selectNode')}</p>'" 
+                            class="text-sm mt-4 text-fuchsia-400 hover:text-cyan-400">
+                        ${t('closeSpec')}
+                    </button>
+                </div>
+            `;
+            document.getElementById('card-detail-view').innerHTML = detailHtml;
+            // Scroll to the detail view (only needed if element is scrollable, but good practice)
+            const panel = root.querySelector('.card-panel');
+            if(panel) {
+                panel.scrollTop = 0;
+            }
+        }
+
+        function drawCard() {
+            // Get the card data for the current language
+            const currentArcana = t('MAJOR_ARCANA'); 
+            
+            // 1. Pick a random card
+            const randomIndex = Math.floor(Math.random() * currentArcana.length);
+            state.currentCard = currentArcana[randomIndex];
+            
+            // 2. Determine if it's reversed (50/50 chance)
+            state.isReversed = Math.random() < 0.5;
+
+            // 3. Navigate to the reading view
+            window.location.hash = '#reading';
+            // Rerender the reading view to show the result
+            renderReading();
+        }
+
+        // --- ROUTING LOGIC ---
+
+        function handleRoute() {
+            const hash = window.location.hash || '#home';
+            state.view = hash.slice(1);
+
+            switch (state.view) {
+                case 'reading':
+                    renderReading();
+                    break;
+                case 'index':
+                    renderIndex();
+                    break;
+                case 'home':
+                default:
+                    state.currentCard = null; // Reset current card on returning home
+                    renderHome();
+                    break;
+            }
+        }
+
+        // Initialize router and listeners
+        window.addEventListener('hashchange', handleRoute);
+        window.onload = () => {
+            // Set the initial language selection and nav text
+            updateNavBarText();
+            // Set the initial route based on the URL hash
+            handleRoute();
+            // Ensure links without hashes (like the main logo) still route
+            document.querySelectorAll('a[href^="#"]').forEach(link => {
+                link.addEventListener('click', (e) => {
+                    e.preventDefault();
+                    window.location.hash = e.currentTarget.getAttribute('href').slice(1);
+                });
+            });
+        };
+    </script>
+</body>
+</html>
