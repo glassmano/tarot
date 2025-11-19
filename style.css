@@ -1,64 +1,61 @@
-/* style.css - Venezuelan Fiesta Theme */
+/* style.css - Venezuelan Fiesta Theme (Updated Background) */
 
 /* Load a warm, expressive font like 'Montserrat' for a happy, welcoming feel, keeping the import for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
        
 body {
     font-family: 'Montserrat', sans-serif;
-    background-color: #F7F7F7; /* Light, clean background */
+    /* --- FIX: Changed from bright white/grey (#F7F7F7) to a soft, creamy yellow-tan --- */
+    background-color: #FFFACD; /* Creamy Yellow / Lemon Chiffon for a warm, sunny feel */
     color: #333333; /* Soft dark text */
     overflow-x: hidden;
 }
 
-/* --- VENEZUELAN FLAG PALETTE --- */
-/* Primary Vibrant (Yellow): Symbolizes the country's wealth and sun */
+/* --- VENEZUELAN FLAG PALETTE (Colors remain the same) --- */
 .neon-green { color: #FFD100; } 
-/* Secondary Accent (Red): Symbolizes independence and the blood shed */
 .neon-violet { color: #CF212F; }
-/* Tertiary Color (Blue): Represents the Caribbean Sea, the sky, and courage */
 .venezuela-blue { color: #002D62; }
 
 /* Vibrant Pop Effect for Headers and Interactive Elements */
 .neon-text {
-    /* Yellow text with a Red shadow and Blue offset */
     text-shadow: 3px 3px 0 #CF212F, 5px 5px 0 #002D62;
-    color: #FFD100; /* Primary Venezuelan Yellow */
+    color: #FFD100;
     font-weight: 900;
 }
        
 /* Color Effect for SVGs */
 .neon-svg-fill {
     filter: none;
-    fill: #002D62; /* Venezuelan Blue */
+    fill: #002D62;
 }
 
 .neon-btn {
-    background-color: #CF212F; /* Red base */
-    border: 3px solid #FFD100; /* Yellow border */
-    box-shadow: 4px 4px 0 #002D62; /* Blue offset shadow */
-    color: #F7F7F7; /* Light text for contrast */
+    background-color: #CF212F;
+    border: 3px solid #FFD100;
+    box-shadow: 4px 4px 0 #002D62;
+    color: #F7F7F7;
     font-weight: 700;
     transition: all 0.2s ease;
 }
 
 .neon-btn:hover {
-    background-color: #002D62; /* Switch to Blue on hover */
-    border-color: #CF212F; /* Red border on hover */
-    box-shadow: 2px 2px 0 #FFD100; /* Bring shadow closer for a 'press' effect */
+    background-color: #002D62;
+    border-color: #CF212F;
+    box-shadow: 2px 2px 0 #FFD100;
     color: #F7F7F7;
-    transform: translate(2px, 2px); /* Shift button down-right */
+    transform: translate(2px, 2px);
 }
 
 /* Bright Card Styling */
 .card-panel {
-    background: #FFFFFF; /* Clean white card */
-    border: 4px solid #FFD100; /* Yellow border */
-    box-shadow: 0 5px 15px rgba(0, 45, 98, 0.2); /* Soft shadow from the Blue color */
+    background: #FFFFFF; /* Keep card panels white for readability/contrast */
+    border: 4px solid #FFD100;
+    box-shadow: 0 5px 15px rgba(0, 45, 98, 0.2);
     border-radius: 10px;
-    backdrop-filter: none; /* Removed cyberpunk blur */
+    backdrop-filter: none;
 }
 
-/* Pattern Overlay - Reflecting the flag's three horizontal stripes */
+/* Pattern Overlay - Reflecting the flag's three horizontal stripes (Made the stripes slightly wider for more impact) */
 .glitch-bg::before {
     content: '';
     position: absolute;
@@ -69,15 +66,17 @@ body {
     pointer-events: none;
     background: repeating-linear-gradient(
         0deg,
-        rgba(255, 209, 0, 0.08), /* Yellow line */
-        rgba(0, 45, 98, 0.08) 2px, /* Blue line */
-        rgba(207, 33, 47, 0.08) 4px, /* Red line */
-        transparent 6px
+        rgba(255, 209, 0, 0.1), /* Yellow line */
+        rgba(255, 209, 0, 0.1) 4px,
+        rgba(0, 45, 98, 0.1) 4px, /* Blue line */
+        rgba(0, 45, 98, 0.1) 8px,
+        rgba(207, 33, 47, 0.1) 8px, /* Red line */
+        rgba(207, 33, 47, 0.1) 12px
     );
     opacity: 0.3;
 }
        
-/* Quick Reveal Animation (Replaces Glitch) */
+/* Quick Reveal Animation (Remains the same) */
 @keyframes reveal-glitch {
     0% { transform: scale(0.8); opacity: 0; }
     100% { transform: scale(1); opacity: 1; }
@@ -86,7 +85,7 @@ body {
     animation: reveal-glitch 0.6s ease-out;
 }
        
-/* Specific Card Dimensions for SVGs */
+/* Specific Card Dimensions for SVGs (Remain the same) */
 .card-svg-large {
     width: 150px;
     height: 250px;
