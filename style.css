@@ -1,14 +1,16 @@
-/* style.css - Venezuelan Fiesta Theme (Updated Background) */
+/* style.css - Venezuelan Fiesta Theme (Final Background Fix) */
 
 /* Load a warm, expressive font like 'Montserrat' for a happy, welcoming feel, keeping the import for consistency */
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap');
        
-body {
+/* --- FIX: Target both body and common app root ID for full coverage --- */
+body, #app, #root {
     font-family: 'Montserrat', sans-serif;
-    /* --- FIX: Changed from bright white/grey (#F7F7F7) to a soft, creamy yellow-tan --- */
     background-color: #FFFACD; /* Creamy Yellow / Lemon Chiffon for a warm, sunny feel */
     color: #333333; /* Soft dark text */
     overflow-x: hidden;
+    /* Ensure the body and root container take up the full height of the viewport */
+    min-height: 100vh;
 }
 
 /* --- VENEZUELAN FLAG PALETTE (Colors remain the same) --- */
@@ -55,7 +57,7 @@ body {
     backdrop-filter: none;
 }
 
-/* Pattern Overlay - Reflecting the flag's three horizontal stripes (Made the stripes slightly wider for more impact) */
+/* Pattern Overlay - Reflecting the flag's three horizontal stripes */
 .glitch-bg::before {
     content: '';
     position: absolute;
