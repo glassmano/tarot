@@ -22,6 +22,12 @@
             text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f0f;
             color: #0ff; /* Primary Cyan Neon */
         }
+        
+        /* Neon Glow for SVGs */
+        .neon-svg-fill {
+            filter: drop-shadow(0 0 4px #0ff) drop-shadow(0 0 8px #f0f);
+            fill: #0ff;
+        }
 
         .neon-btn {
             background-color: transparent;
@@ -75,6 +81,16 @@
         }
         .animate-reveal {
             animation: reveal-glitch 1s ease-in-out;
+        }
+        
+        /* Specific Card Dimensions for SVGs */
+        .card-svg-large {
+            width: 150px;
+            height: 250px;
+        }
+        .card-svg-small {
+            width: 96px;
+            height: 160px;
         }
     </style>
 </head>
@@ -226,7 +242,142 @@
         };
 
         const root = document.getElementById('app-root');
-        const cardBack = 'https://placehold.co/150x250/0f00ff/0d0d0d?text=CYBER+DECK\n%7B+ACCESS+DENIED+%7D'; // Neon Purple Card Back
+
+        // --- CARD SVG GENERATION ---
+        
+        /**
+         * Generates the Cyberpunk-themed SVG icon for a given card ID.
+         * @param {number} id - The ID of the card (0, 1, 2, etc.)
+         * @param {boolean} isSmall - If true, generates a smaller, condensed SVG.
+         * @returns {string} The SVG markup.
+         */
+        function getCardSvg(id, isSmall = false) {
+            const sizeClass = isSmall ? 'card-svg-small' : 'card-svg-large';
+            const style = isSmall ? 'stroke-fuchsia-400 stroke-[4] neon-svg-fill' : 'stroke-cyan-400 stroke-[5] neon-svg-fill';
+            
+            let svgContent = '';
+
+            switch (id) {
+                case 0: // THE FOOL (THE GLITCH)
+                    // Broken circle (world) with a single error line through it
+                    svgContent = `
+                        <circle cx="50" cy="50" r="45" fill="none" stroke-dasharray="10 5"/>
+                        <line x1="10" y1="50" x2="90" y2="50" stroke-width="8"/>
+                        <path d="M 40 30 L 60 70 M 60 30 L 40 70" stroke-width="4" stroke="currentColor"/>
+                    `;
+                    break;
+                case 1: // THE MAGICIAN (THE CODER)
+                    // Hand reaching for a floating data cube
+                    svgContent = `
+                        <path d="M 50 10 L 65 30 L 35 30 Z" fill="currentColor"/>
+                        <rect x="40" y="70" width="20" height="20" fill="currentColor"/>
+                        <line x1="50" y1="40" x2="50" y2="70" stroke-width="4" stroke="currentColor"/>
+                        <path d="M 30 70 C 20 80, 20 90, 30 90" fill="none" stroke-width="4" stroke="currentColor"/>
+                        <path d="M 70 70 C 80 80, 80 90, 70 90" fill="none" stroke-width="4" stroke="currentColor"/>
+                    `;
+                    break;
+                case 2: // THE HIGH PRIESTESS (THE ORACLE)
+                    // Stylized eye with data streams (V.I.)
+                    svgContent = `
+                        <path d="M 10 50 C 30 20, 70 20, 90 50 C 70 80, 30 80, 10 50 Z" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <circle cx="50" cy="50" r="10" fill="currentColor"/>
+                        <line x1="50" y1="10" x2="50" y2="35" stroke-width="3" stroke="currentColor"/>
+                        <line x1="50" y1="65" x2="50" y2="90" stroke-width="3" stroke="currentColor"/>
+                    `;
+                    break;
+                case 3: // THE EMPRESS (THE MEGA-CITY)
+                    // Layered city skyline
+                    svgContent = `
+                        <rect x="5" y="60" width="90" height="35" fill="currentColor"/>
+                        <rect x="15" y="40" width="30" height="20" fill="#0d0d0d" stroke="currentColor" stroke-width="3"/>
+                        <rect x="55" y="20" width="30" height="40" fill="#0d0d0d" stroke="currentColor" stroke-width="3"/>
+                        <line x1="60" y1="55" x2="80" y2="55" stroke="currentColor" stroke-width="2"/>
+                        <line x1="60" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2"/>
+                    `;
+                    break;
+                case 4: // THE EMPEROR (THE NETWORK)
+                    // Central processor unit (CPU)
+                    svgContent = `
+                        <rect x="20" y="20" width="60" height="60" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <rect x="30" y="30" width="40" height="40" fill="currentColor"/>
+                        <line x1="20" y1="50" x2="0" y2="50" stroke-width="4" stroke="currentColor"/>
+                        <line x1="80" y1="50" x2="100" y2="50" stroke-width="4" stroke="currentColor"/>
+                        <line x1="50" y1="20" x2="50" y2="0" stroke-width="4" stroke="currentColor"/>
+                        <line x1="50" y1="80" x2="50" y2="100" stroke-width="4" stroke="currentColor"/>
+                    `;
+                    break;
+                case 5: // THE HIEROPHANT (THE SECT LEADER)
+                    // Crossed keys (security/tradition)
+                    svgContent = `
+                        <rect x="25" y="5" width="10" height="50" fill="currentColor"/>
+                        <circle cx="20" cy="70" r="10" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <rect x="45" y="30" width="50" height="10" fill="currentColor" transform="rotate(45 50 50)"/>
+                        <rect x="45" y="55" width="50" height="10" fill="currentColor" transform="rotate(135 50 50)"/>
+                    `;
+                    break;
+                case 8: // STRENGTH (THE CYBORG)
+                    // Bionic arm/circuit muscle
+                    svgContent = `
+                        <path d="M 20 80 C 40 60, 60 60, 80 80" fill="none" stroke="currentColor" stroke-width="6"/>
+                        <path d="M 30 80 L 30 90 L 70 90 L 70 80" fill="currentColor"/>
+                        <circle cx="50" cy="50" r="15" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <line x1="50" y1="35" x2="50" y2="65" stroke="currentColor" stroke-width="2"/>
+                        <line x1="35" y1="50" x2="65" y2="50" stroke="currentColor" stroke-width="2"/>
+                    `;
+                    break;
+                case 10: // WHEEL OF FORTUNE (THE ALGORITHM)
+                    // Spinning Gear / Flux
+                    svgContent = `
+                        <circle cx="50" cy="50" r="40" fill="none" stroke="currentColor" stroke-width="4"/>
+                        <line x1="50" y1="10" x2="50" y2="90" stroke="currentColor" stroke-width="2"/>
+                        <line x1="10" y1="50" x2="90" y2="50" stroke="currentColor" stroke-width="2"/>
+                        <path d="M 50 10 L 60 20 L 40 20 Z" fill="currentColor"/>
+                        <path d="M 50 90 L 60 80 L 40 80 Z" fill="currentColor" transform="rotate(180 50 50)"/>
+                        <rect x="10" y="40" width="20" height="20" fill="currentColor" transform="rotate(-90 20 50)"/>
+                        <rect x="70" y="40" width="20" height="20" fill="currentColor" transform="rotate(90 80 50)"/>
+                    `;
+                    break;
+                case 13: // DEATH (THE REBOOT)
+                    // Power symbol / broken mask
+                    svgContent = `
+                        <circle cx="50" cy="50" r="30" fill="none" stroke="currentColor" stroke-width="6"/>
+                        <line x1="50" y1="20" x2="50" y2="50" stroke="currentColor" stroke-width="6"/>
+                        <line x1="35" y1="65" x2="65" y2="65" stroke="currentColor" stroke-width="4"/>
+                        <line x1="45" y1="75" x2="55" y2="75" stroke="currentColor" stroke-width="4"/>
+                    `;
+                    break;
+                case 16: // THE TOWER (THE SYSTEM CRASH)
+                    // Lightning bolt striking a block
+                    svgContent = `
+                        <rect x="30" y="50" width="40" height="40" fill="currentColor"/>
+                        <line x1="50" y1="10" x2="40" y2="40" stroke="currentColor" stroke-width="5"/>
+                        <line x1="40" y1="40" x2="60" y2="40" stroke="currentColor" stroke-width="5"/>
+                        <line x1="60" y1="40" x2="50" y2="70" stroke="currentColor" stroke-width="5"/>
+                        <path d="M 40 50 L 60 50" stroke="red" stroke-width="2"/>
+                        <path d="M 40 60 L 60 60" stroke="red" stroke-width="2"/>
+                    `;
+                    break;
+                default:
+                    // Default fallback
+                    svgContent = `<text x="50%" y="50%" font-size="12" text-anchor="middle" fill="currentColor">NO DATA</text>`;
+            }
+
+            return `
+                <svg viewBox="0 0 100 100" class="${sizeClass} ${style} bg-gray-900 rounded-lg p-2" preserveAspectRatio="xMidYMid meet">
+                    ${svgContent}
+                </svg>
+            `;
+        }
+
+        // Custom SVG for the Card Back
+        const cardBackSvg = `
+            <svg viewBox="0 0 100 160" class="card-svg-large stroke-fuchsia-500 stroke-[3] neon-svg-fill bg-gray-900 rounded-lg p-4" preserveAspectRatio="xMidYMid meet">
+                <rect x="10" y="10" width="80" height="140" fill="none" stroke-dasharray="10 5"/>
+                <text x="50" y="75" font-size="10" fill="#f0f" text-anchor="middle" font-weight="bold">CYBER DECK</text>
+                <text x="50" y="90" font-size="8" fill="#0ff" text-anchor="middle">[ ACCESS DENIED ]</text>
+                <path d="M 50 10 L 50 150 M 10 80 L 90 80" stroke="#f0f" stroke-width="1"/>
+            </svg>
+        `;
 
         // --- TRANSLATION FUNCTION ---
         function t(key, lang = state.language) {
@@ -286,13 +437,6 @@
             document.getElementById('app-modal').classList.add('hidden');
         }
 
-        function getCardPath(cardName) {
-            // Simplified placeholder image generation for the card face
-            const name = cardName.replace(/\s/g, '+').replace(/\/\//g, '');
-            // Using Cyan and Magenta for the face to maintain the theme
-            return `https://placehold.co/150x250/00ffff/ff00ff?text=${name}`; 
-        }
-
         // --- VIEW RENDERING LOGIC ---
 
         function renderHome() {
@@ -338,10 +482,11 @@
                         <p class="text-sm uppercase ${colorClass} mb-6">${isReversed ? t('reversedPosition') : t('uprightPosition')}</p>
                         
                         <div class="flex flex-col md:flex-row items-start md:space-x-8 w-full">
-                            <!-- Card Image (Simulated) -->
-                            <div class="flex-shrink-0 mb-6 md:mb-0 w-full md:w-auto">
-                                <img src="${getCardPath(card.title)}" alt="${card.title}" 
-                                     class="w-40 h-72 object-cover ${rotation} transform transition duration-500 rounded-lg ${borderColor} border-4 mx-auto md:mx-0 shadow-2xl shadow-cyan-500/30"/>
+                            <!-- Card SVG (The actual visual icon) -->
+                            <div class="flex-shrink-0 mb-6 md:mb-0 w-full md:w-auto mx-auto md:mx-0 
+                                        border-4 rounded-lg shadow-2xl shadow-cyan-500/30
+                                        ${borderColor} ${rotation} transform transition duration-500">
+                                ${getCardSvg(card.id)}
                                 <p class="text-center mt-2 text-xl font-bold ${colorClass}">${card.title}</p>
                             </div>
 
@@ -375,9 +520,9 @@
                         <p class="text-fuchsia-400 mb-8">${t('deckDesc')}</p>
                         
                         <div class="flex justify-center mb-10">
-                            <!-- Deck Image (Simulated Card Back) -->
-                            <div onclick="drawCard()" class="cursor-pointer transition duration-300 hover:scale-[1.05] hover:shadow-cyan-500/70 shadow-xl rounded-lg">
-                                <img src="${cardBack}" alt="Cyber Deck Back" class="w-40 h-72 object-cover border-4 border-fuchsia-500 rounded-lg"/>
+                            <!-- Deck SVG (Simulated Card Back) -->
+                            <div onclick="drawCard()" class="cursor-pointer transition duration-300 hover:scale-[1.05] hover:shadow-cyan-500/70 shadow-xl rounded-lg border-4 border-fuchsia-500">
+                                ${cardBackSvg}
                             </div>
                         </div>
 
@@ -432,9 +577,9 @@
                 <div class="p-4 mb-6 bg-gray-800 rounded-lg border-2 border-cyan-400 overflow-hidden">
                     <h3 class="text-2xl font-bold neon-text mb-3">${card.name} - ${card.title}</h3>
                     <div class="md:flex md:space-x-6 w-full">
-                        <div class="flex-shrink-0 mb-4 md:mb-0">
-                             <img src="${getCardPath(card.title)}" alt="${card.title}" 
-                                     class="w-24 h-40 object-cover rounded-md border border-fuchsia-500 mx-auto md:mx-0"/>
+                        <!-- Card SVG (Small Version) -->
+                        <div class="flex-shrink-0 mb-4 md:mb-0 mx-auto md:mx-0 border rounded-md border-fuchsia-500">
+                             ${getCardSvg(card.id, true)}
                         </div>
                         <div class="flex-grow w-full">
                             <p class="text-fuchsia-400 font-semibold">${t('uprightTitle')}</p>
