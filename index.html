@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>CYBER-ORACLE // 2077</title>
+    <title>PHANTOM ORACLE // GHOST-NET</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
@@ -12,42 +12,50 @@
         
         body {
             font-family: 'IBM Plex Mono', monospace;
-            background-color: #0d0d0d; /* Near-black background */
+            background-color: #0d0d14; /* Very dark blue-gray */
             color: #ccc;
             overflow-x: hidden; /* Ensures no horizontal scroll */
         }
 
+        /* --- SPOOKY CYBERPUNK PALETTE --- */
+        /* Primary Neon: Eerie Green - Symbolizes toxic data, spectral glow */
+        .neon-green { color: #00FF88; }
+        /* Secondary Accent: Pulsating Violet - Symbolizes mystery, corrupted energy */
+        .neon-violet { color: #8800FF; }
+
         /* Neon Glow Effect for Headers and Interactive Elements */
         .neon-text {
-            text-shadow: 0 0 5px #0ff, 0 0 10px #0ff, 0 0 15px #0ff, 0 0 20px #f0f;
-            color: #0ff; /* Primary Cyan Neon */
+            /* Eerie Green Glow with a Violet secondary shadow */
+            text-shadow: 0 0 5px #00FF88, 0 0 10px #00FF88, 0 0 15px #00FF88, 0 0 20px #8800FF;
+            color: #00FF88; /* Primary Neon Green */
         }
         
         /* Neon Glow for SVGs */
         .neon-svg-fill {
-            filter: drop-shadow(0 0 4px #0ff) drop-shadow(0 0 8px #f0f);
-            fill: #0ff;
+            /* Green fill with Violet shadow */
+            filter: drop-shadow(0 0 4px #00FF88) drop_shadow(0 0 8px #8800FF);
+            fill: #00FF88;
         }
 
         .neon-btn {
             background-color: transparent;
-            border: 2px solid #0ff;
-            box-shadow: 0 0 8px #0ff;
-            color: #0ff;
+            border: 2px solid #00FF88;
+            box-shadow: 0 0 8px #00FF88;
+            color: #00FF88;
             transition: all 0.3s ease;
         }
 
         .neon-btn:hover {
-            background-color: #0ff1; /* Very slight cyan background on hover */
-            box-shadow: 0 0 15px #0ff, 0 0 25px #f0f; /* Intensify glow */
+            background-color: #00FF881A; /* Very slight green background on hover */
+            box-shadow: 0 0 15px #00FF88, 0 0 25px #8800FF; /* Intensify glow */
             color: #fff;
         }
 
         /* Futuristic Card Styling */
         .card-panel {
-            background: rgba(18, 18, 18, 0.9);
-            border: 1px solid #f0f;
-            box-shadow: 0 0 10px #f0f50; /* Subtle magenta shadow */
+            background: rgba(18, 18, 20, 0.9); /* Slightly bluish dark background */
+            border: 1px solid #8800FF; /* Violet accent border */
+            box-shadow: 0 0 10px #8800FF50; /* Subtle violet shadow */
             backdrop-filter: blur(5px);
         }
 
@@ -62,8 +70,8 @@
             pointer-events: none;
             background: repeating-linear-gradient(
                 0deg,
-                rgba(0, 255, 255, 0.05), /* Cyan lines */
-                rgba(240, 0, 240, 0.05) 1px, /* Magenta lines */
+                rgba(0, 255, 136, 0.05), /* Eerie Green lines */
+                rgba(136, 0, 255, 0.05) 1px, /* Pulsating Violet lines */
                 transparent 2px,
                 transparent 4px
             );
@@ -96,42 +104,34 @@
 </head>
 <body class="glitch-bg min-h-screen">
     
-    <!-- Navigation Bar (Always visible) -->
-    <nav class="bg-gray-900 border-b border-fuchsia-500/50 shadow-lg fixed w-full z-10">
+    <!-- Navigation Bar (Always visible) --><nav class="bg-gray-900 border-b border-violet-500/50 shadow-lg fixed w-full z-10">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex items-center justify-between h-16">
-                <!-- App Title (Left Side) -->
-                <div class="flex items-center">
-                    <span class="text-xl sm:text-2xl font-bold neon-text" id="app-title-nav">CYBER-ORACLE // 2077</span>
+                <!-- App Title (Left Side) --><div class="flex items-center">
+                    <span class="text-xl sm:text-2xl font-bold neon-text" id="app-title-nav">PHANTOM ORACLE // GHOST-NET</span>
                 </div>
                 
-                <!-- Links and Selector (Right Side) -->
-                <div class="flex space-x-4 items-center">
-                    <!-- Navigation Links Container: Now uses icons and hides text on mobile -->
-                    <div class="flex space-x-4 items-center">
+                <!-- Links and Selector (Right Side) --><div class="flex space-x-4 items-center">
+                    <!-- Navigation Links Container: Now uses icons and hides text on mobile --><div class="flex space-x-4 items-center">
                         
-                        <!-- HOME_NODE Link -->
-                        <a href="#home" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-cyan-400 transition duration-150 ease-in-out text-fuchsia-400 nav-link">
+                        <!-- HOME_NODE Link --><a href="#home" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
                             <i class="fa-solid fa-satellite-dish text-base sm:text-lg"></i>
                             <span class="hidden sm:inline" id="nav-text-homeNode"></span>
                         </a>
 
-                        <!-- START_READING Link -->
-                        <a href="#reading" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-cyan-400 transition duration-150 ease-in-out text-fuchsia-400 nav-link">
+                        <!-- START_READING Link --><a href="#reading" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
                             <i class="fa-solid fa-wand-magic-sparkles text-base sm:text-lg"></i>
                             <span class="hidden sm:inline" id="nav-text-startReading"></span>
                         </a>
 
-                        <!-- CARD_INDEX Link -->
-                        <a href="#index" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-cyan-400 transition duration-150 ease-in-out text-fuchsia-400 nav-link">
+                        <!-- CARD_INDEX Link --><a href="#index" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
                             <i class="fa-solid fa-database text-base sm:text-lg"></i>
                             <span class="hidden sm:inline" id="nav-text-cardIndex"></span>
                         </a>
                     </div>
                     
-                    <!-- Language Selector: Always visible -->
-                    <select onchange="setLanguage(this.value)" id="language-select" 
-                            class="bg-gray-800 text-cyan-400 border border-fuchsia-500 rounded-md text-sm p-1 focus:ring-cyan-400 focus:border-cyan-400">
+                    <!-- Language Selector: Always visible --><select onchange="setLanguage(this.value)" id="language-select" 
+                            class="bg-gray-800 text-green-400 border border-violet-500 rounded-md text-sm p-1 focus:ring-green-400 focus:border-green-400">
                         <option value="en">EN</option>
                         <option value="es">ES</option>
                     </select>
@@ -140,15 +140,12 @@
         </div>
     </nav>
 
-    <!-- Main Content Area - Reduced mobile padding (p-2) and ensured overflow is hidden -->
-    <main id="app-root" class="pt-20 p-2 md:p-8 flex justify-center items-start min-h-[calc(100vh-80px)] overflow-x-hidden">
-        <!-- Content will be injected here by JavaScript -->
-    </main>
+    <!-- Main Content Area - Reduced mobile padding (p-2) and ensured overflow is hidden --><main id="app-root" class="pt-20 p-2 md:p-8 flex justify-center items-start min-h-[calc(100vh-80px)] overflow-x-hidden">
+        <!-- Content will be injected here by JavaScript --></main>
 
-    <!-- Modal for Error/Message Handling (A sleek, non-alert box) -->
-    <div id="app-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4" onclick="hideModal()">
+    <!-- Modal for Error/Message Handling (A sleek, non-alert box) --><div id="app-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4" onclick="hideModal()">
         <div class="card-panel p-6 rounded-lg w-full max-w-sm" onclick="event.stopPropagation()">
-            <h3 id="modal-title" class="text-xl font-bold mb-3 border-b border-cyan-400 pb-2 neon-text"></h3>
+            <h3 id="modal-title" class="text-xl font-bold mb-3 border-b border-green-400 pb-2 neon-text"></h3>
             <p id="modal-content" class="text-gray-300"></p>
             <button class="mt-4 w-full neon-btn py-2 rounded-md text-sm" onclick="hideModal()"></button>
         </div>
@@ -160,37 +157,37 @@
         const translations = {
             en: {
                 // UI Text
-                appName: "CYBER-ORACLE // 2077",
+                appName: "PHANTOM ORACLE // GHOST-NET",
                 homeNode: "HOME_NODE",
-                startReading: "START_READING",
-                cardIndex: "CARD_INDEX",
-                systemMessage: "SYSTEM MESSAGE",
-                acknowledge: "ACKNOWLEDGE [OK]",
-                accessFuture: "Access the future through the fractured network.",
-                initiateReadout: "INITIATE HOLOGRAPHIC READOUT",
-                viewArchives: "VIEW DATA ARCHIVES",
-                protocol: "PROTOCOL 77.01",
-                protocolDesc: "The system will randomly access a node from the Major Arcana data core. This single draw represents your current trajectory. Consult the data. Modify your path. Survival is the only metric.",
-                deckInterface: "DECK INTERFACE (MAJOR ARCANA)",
-                deckDesc: "Click the holographic card to pull your current data stream.",
-                drawCardEngage: "DRAW CARD [ENGAGE]",
-                readoutComplete: "READOUT COMPLETE:",
-                reversedPosition: ":: REVERSED POSITION ::",
-                uprightPosition: ":: UPRIGHT POSITION ::",
-                systemError: "SYSTEM ERROR/GLITCH",
-                holographicInterpretation: "HOLOGRAPHIC INTERPRETATION",
-                coreData: "CORE DATA KEYWORDS:",
-                reInitiate: "RE-INITIATE READOUT",
-                dataArchives: "DATA ARCHIVES: MAJOR ARCANA NODES",
-                selectNode: "Select a node from the grid below to view its full data specification.",
+                startReading: "INITIATE_CHANNELING",
+                cardIndex: "ARCHIVE_GLYPHS",
+                systemMessage: "SPECTRAL BROADCAST",
+                acknowledge: "ACKNOWLEDGE [RECEIVE]",
+                accessFuture: "Channel the unknown through the echoes of the Ghost-Net.",
+                initiateReadout: "INITIATE ETHERIC PROJECTION",
+                viewArchives: "ACCESS LOST ARCHIVES",
+                protocol: "PROTOCOL OMEGA-PHANTOM",
+                protocolDesc: "The system will randomly access a node from the Major Arcana data core. This single draw represents your current trajectory within the spectral plane. Consult the glyphs. Interpret the warnings. Survival is uncertain.",
+                deckInterface: "ETHERIC DECK (MAJOR ARCANA)",
+                deckDesc: "Click the spectral card to pull your current data echo.",
+                drawCardEngage: "DRAW GLYPH [ENGAGE]",
+                readoutComplete: "PROJECTION COMPLETE:",
+                reversedPosition: ":: CORRUPTED SIGNAL ::",
+                uprightPosition: ":: ETHERIC ECHO ::",
+                systemError: "SYSTEM CORRUPTION/MANIFESTATION",
+                holographicInterpretation: "ETHERIC INTERPRETATION",
+                coreData: "CORE GLYPH ATTRIBUTES:",
+                reInitiate: "RE-INITIATE CHANNELING",
+                dataArchives: "DATA ARCHIVES: MAJOR ARCANA GLYPHS",
+                selectNode: "Select a glyph from the grid below to view its full spectral specification.",
                 dataCorruption: "DATA CORRUPTION",
-                cardNotFound: "Requested card data not found in archive.",
+                cardNotFound: "Requested glyph data not found in archive.",
                 viewFullSpec: "VIEW FULL SPEC",
                 closeSpec: "[CLOSE SPEC]",
-                uprightTitle: "UPRIGHT (Holographic Interpretation):",
-                reversedTitle: "REVERSED (System Error/Glitch):",
+                uprightTitle: "ETHERIC ECHO (Interpreted):",
+                reversedTitle: "CORRUPTED SIGNAL (Manifestation/Warning):",
 
-                // Card Data
+                // Card Data (English - kept consistent)
                 MAJOR_ARCANA: [
                     { id: 0, name: "THE FOOL", title: "THE GLITCH", meaningUp: "A reckless start, limitless potential, untainted code. You are outside the system.", meaningRev: "System error, self-sabotage, naive programming. You are disconnected from the network.", keywords: ["New Beginnings", "Innocence", "Risk"] },
                     { id: 1, name: "THE MAGICIAN", title: "THE CODER", meaningUp: "Mastery of resources, focused intent, full control of the matrix. Manifestation is online.", meaningRev: "Manipulation, untapped skill, data corruption. Your power source is offline.", keywords: ["Skill", "Action", "Focus"] },
@@ -206,37 +203,37 @@
             },
             es: {
                 // UI Text (Spanish translations)
-                appName: "CIBER-ORÁCULO // 2077",
+                appName: "ORÁCULO FANTASMA // RED-ESPECTRAL",
                 homeNode: "NODO_INICIO",
-                startReading: "INICIAR_LECTURA",
-                cardIndex: "ÍNDICE_CARTAS",
-                systemMessage: "MENSAJE DEL SISTEMA",
-                acknowledge: "RECONOCER [OK]",
-                accessFuture: "Accede al futuro a través de la red fracturada.",
-                initiateReadout: "INICIAR LECTURA HOLOGRÁFICA",
-                viewArchives: "VER ARCHIVOS DE DATOS",
-                protocol: "PROTOCOLO 77.01",
-                protocolDesc: "El sistema accederá aleatoriamente a un nodo del núcleo de datos del Arcano Mayor. Esta única extracción representa tu trayectoria actual. Consulta los datos. Modifica tu camino. La supervivencia es la única métrica.",
-                deckInterface: "INTERFAZ DE MAZO (ARCANO MAYOR)",
-                deckDesc: "Haz clic en la carta holográfica para obtener tu flujo de datos actual.",
-                drawCardEngage: "EXTRAER CARTA [ENGANCHE]",
-                readoutComplete: "LECTURA COMPLETA:",
-                reversedPosition: ":: POSICIÓN INVERTIDA ::",
-                uprightPosition: ":: POSICIÓN DERECHA ::",
-                systemError: "ERROR DEL SISTEMA/FALLO",
-                holographicInterpretation: "INTERPRETACIÓN HOLOGRÁFICA",
-                coreData: "PALABRAS CLAVE DEL NÚCLEO DE DATOS:",
-                reInitiate: "REINICIAR LECTURA",
-                dataArchives: "ARCHIVOS DE DATOS: MAJOR ARCANA NODES",
-                selectNode: "Selecciona un nodo de la cuadrícula a continuación para ver su especificación de datos completa.",
+                startReading: "INICIAR_CANALIZACIÓN",
+                cardIndex: "ARCHIVO_GLIFOS",
+                systemMessage: "TRANSMISIÓN ESPECTRAL",
+                acknowledge: "RECONOCER [RECIBIR]",
+                accessFuture: "Canaliza lo desconocido a través de los ecos de la Red-Espectral.",
+                initiateReadout: "INICIAR PROYECCIÓN ETÉRICA",
+                viewArchives: "ACCEDER A ARCHIVOS PERDIDOS",
+                protocol: "PROTOCOLO OMEGA-FANTASMA",
+                protocolDesc: "El sistema accederá aleatoriamente a un nodo del núcleo de datos del Arcano Mayor. Esta única extracción representa tu trayectoria actual dentro del plano espectral. Consulta los glifos. Interpreta las advertencias. La supervivencia es incierta.",
+                deckInterface: "MAZO ETÉRICO (ARCANO MAYOR)",
+                deckDesc: "Haz clic en la carta espectral para obtener tu eco de datos actual.",
+                drawCardEngage: "EXTRAER GLIFO [ENGANCHE]",
+                readoutComplete: "PROYECCIÓN COMPLETA:",
+                reversedPosition: ":: SEÑAL CORRUPTA ::",
+                uprightPosition: ":: ECO ETÉRICO ::",
+                systemError: "CORRUPCIÓN DEL SISTEMA/MANIFESTACIÓN",
+                holographicInterpretation: "INTERPRETACIÓN ETÉRICA",
+                coreData: "ATRIBUTOS DEL GLIFO CENTRAL:",
+                reInitiate: "RE-INICIAR CANALIZACIÓN",
+                dataArchives: "ARCHIVOS DE DATOS: MAJOR ARCANA GLYPHS",
+                selectNode: "Selecciona un glifo de la cuadrícula a continuación para ver su especificación espectral completa.",
                 dataCorruption: "CORRUPCIÓN DE DATOS",
-                cardNotFound: "Datos de la carta solicitada no encontrados en el archivo.",
+                cardNotFound: "Datos del glifo solicitado no encontrados en el archivo.",
                 viewFullSpec: "VER ESPECIFICACIÓN COMPLETA",
                 closeSpec: "[CERRAR ESPEC]",
-                uprightTitle: "DERECHA (Interpretación Holográfica):",
-                reversedTitle: "INVERTIDA (Error del Sistema/Fallo):",
+                uprightTitle: "ECO ETÉRICO (Interpretado):",
+                reversedTitle: "SEÑAL CORRUPTA (Manifestación/Advertencia):",
 
-                // Card Data
+                // Card Data (Spanish - kept consistent)
                 MAJOR_ARCANA: [
                     { id: 0, name: "EL LOCO", title: "EL FALLO", meaningUp: "Un comienzo imprudente, potencial ilimitado, código intacto. Estás fuera del sistema.", meaningRev: "Error del sistema, autosabotaje, programación ingenua. Estás desconectado de la red.", keywords: ["Nuevos Comienzos", "Inocencia", "Riesgo"] },
                     { id: 1, name: "EL MAGO", title: "EL CODIFICADOR", meaningUp: "Dominio de recursos, intención enfocada, control total de la matriz. La manifestación está en línea.", meaningRev: "Manipulación, habilidad no aprovechada, corrupción de datos. Tu fuente de energía está fuera de línea.", keywords: ["Habilidad", "Acción", "Enfoque"] },
@@ -273,7 +270,8 @@
          */
         function getCardSvg(id, isSmall = false) {
             const sizeClass = isSmall ? 'card-svg-small' : 'card-svg-large';
-            const style = isSmall ? 'stroke-fuchsia-400 stroke-[4] neon-svg-fill' : 'stroke-cyan-400 stroke-[5] neon-svg-fill';
+            // Use eerie green as the stroke/fill color for the SVG
+            const style = isSmall ? 'stroke-violet-400 stroke-[4] neon-svg-fill' : 'stroke-green-400 stroke-[5] neon-svg-fill';
             
             let svgContent = '';
 
@@ -309,8 +307,8 @@
                     // Layered city skyline
                     svgContent = `
                         <rect x="5" y="60" width="90" height="35" fill="currentColor"/>
-                        <rect x="15" y="40" width="30" height="20" fill="#0d0d0d" stroke="currentColor" stroke-width="3"/>
-                        <rect x="55" y="20" width="30" height="40" fill="#0d0d0d" stroke="currentColor" stroke-width="3"/>
+                        <rect x="15" y="40" width="30" height="20" fill="#0d0d14" stroke="currentColor" stroke-width="3"/>
+                        <rect x="55" y="20" width="30" height="40" fill="#0d0d14" stroke="currentColor" stroke-width="3"/>
                         <line x1="60" y1="55" x2="80" y2="55" stroke="currentColor" stroke-width="2"/>
                         <line x1="60" y1="50" x2="80" y2="50" stroke="currentColor" stroke-width="2"/>
                     `;
@@ -391,11 +389,11 @@
 
         // Custom SVG for the Card Back
         const cardBackSvg = `
-            <svg viewBox="0 0 100 160" class="card-svg-large stroke-fuchsia-500 stroke-[3] neon-svg-fill bg-gray-900 rounded-lg p-4" preserveAspectRatio="xMidYMid meet">
+            <svg viewBox="0 0 100 160" class="card-svg-large stroke-violet-500 stroke-[3] neon-svg-fill bg-gray-900 rounded-lg p-4" preserveAspectRatio="xMidYMid meet">
                 <rect x="10" y="10" width="80" height="140" fill="none" stroke-dasharray="10 5"/>
-                <text x="50" y="75" font-size="10" fill="#f0f" text-anchor="middle" font-weight="bold">CYBER DECK</text>
-                <text x="50" y="90" font-size="8" fill="#0ff" text-anchor="middle">[ ACCESS DENIED ]</text>
-                <path d="M 50 10 L 50 150 M 10 80 L 90 80" stroke="#f0f" stroke-width="1"/>
+                <text x="50" y="75" font-size="10" fill="#8800FF" text-anchor="middle" font-weight="bold">SPECTRAL DECK</text>
+                <text x="50" y="90" font-size="8" fill="#00FF88" text-anchor="middle">[ SIGNAL VOID ]</text>
+                <path d="M 50 10 L 50 150 M 10 80 L 90 80" stroke="#8800FF" stroke-width="1"/>
             </svg>
         `;
 
@@ -464,18 +462,18 @@
             root.innerHTML = `
                 <div class="card-panel p-8 rounded-xl w-full max-w-4xl text-center">
                     <h1 class="text-4xl md:text-6xl font-extrabold mb-4 neon-text">${t('appName')}</h1>
-                    <p class="text-xl text-fuchsia-400 mb-8">${t('accessFuture')}</p>
+                    <p class="text-xl text-violet-400 mb-8">${t('accessFuture')}</p>
                     
                     <div class="space-y-4 md:space-y-0 md:space-x-4 flex flex-col md:flex-row justify-center">
                         <a href="#reading" class="neon-btn py-3 px-8 text-lg rounded-lg">
                             ${t('initiateReadout')}
                         </a>
-                        <a href="#index" class="neon-btn py-3 px-8 text-lg rounded-lg border-fuchsia-500 text-fuchsia-500 hover:border-cyan-400 hover:text-cyan-400">
+                        <a href="#index" class="neon-btn py-3 px-8 text-lg rounded-lg border-violet-500 text-violet-500 hover:border-green-400 hover:text-green-400">
                             ${t('viewArchives')}
                         </a>
                     </div>
                     
-                    <div class="mt-10 border-t border-cyan-400/50 pt-6">
+                    <div class="mt-10 border-t border-green-400/50 pt-6">
                         <h2 class="text-2xl font-bold mb-3 neon-text text-left">${t('protocol')}</h2>
                         <p class="text-sm text-gray-400 text-left">
                             ${t('protocolDesc')}
@@ -498,33 +496,31 @@
 
                 content = `
                     <div class="card-panel p-8 rounded-xl w-full max-w-4xl animate-reveal">
-                        <h2 class="text-3xl font-extrabold mb-6 neon-text text-center border-b border-fuchsia-500/50 pb-3">${t('readoutComplete')} ${card.name} / ${card.title}</h2>
+                        <h2 class="text-3xl font-extrabold mb-6 neon-text text-center border-b border-violet-500/50 pb-3">${t('readoutComplete')} ${card.name} / ${card.title}</h2>
                         
                         <div class="flex flex-col md:flex-row items-center md:items-start space-y-6 md:space-y-0 md:space-x-8">
                             
-                            <!-- Card Image -->
-                            <div class="flex-shrink-0 relative">
+                            <!-- Card Image --><div class="flex-shrink-0 relative">
                                 <div class="transform ${isReversed ? 'rotate-180' : 'rotate-0'} transition-transform duration-500 ease-in-out">
                                     ${cardSvg}
                                 </div>
-                                <p class="text-center text-sm font-bold mt-2 text-fuchsia-400">${positionText}</p>
+                                <p class="text-center text-sm font-bold mt-2 text-violet-400">${positionText}</p>
                             </div>
 
-                            <!-- Card Interpretation -->
-                            <div class="flex-grow">
+                            <!-- Card Interpretation --><div class="flex-grow">
                                 <h3 class="text-xl font-bold mb-3 neon-text">${titleText}</h3>
-                                <p class="text-gray-300 mb-6 text-sm md:text-base">${meaning}</p>
+                                <p class="text-gray-300 mb-6 text-sm md:text-base break-words">${meaning}</p>
                                 
-                                <h3 class="text-lg font-bold mt-4 neon-text border-t border-cyan-400/50 pt-4">${t('coreData')}</h3>
-                                <div class="flex flex-wrap gap-2">
+                                <h3 class="text-lg font-bold mt-4 neon-text border-t border-green-400/50 pt-4">${t('coreData')}</h3>
+                                <div class="flex flex-wrap gap-2 break-words">
                                     ${card.keywords.map(keyword => 
-                                        `<span class="text-sm bg-cyan-800/30 text-cyan-300 px-3 py-1 rounded-full border border-cyan-600">${keyword}</span>`
+                                        `<span class="text-sm bg-green-800/30 text-green-300 px-3 py-1 rounded-full border border-green-600">${keyword}</span>`
                                     ).join('')}
                                 </div>
                             </div>
                         </div>
 
-                        <div class="mt-8 pt-4 border-t border-fuchsia-500/50 text-center">
+                        <div class="mt-8 pt-4 border-t border-violet-500/50 text-center">
                             <button onclick="clearReading()" class="neon-btn py-2 px-6 text-lg rounded-lg">
                                 ${t('reInitiate')}
                             </button>
@@ -587,35 +583,33 @@
                     detailsContent = `
                         <div class="fixed inset-0 bg-black bg-opacity-90 z-40 flex items-center justify-center p-4">
                             <div class="card-panel p-8 rounded-xl w-full max-w-4xl lg:max-w-5xl overflow-y-auto max-h-[90vh]">
-                                <h2 class="text-3xl font-extrabold mb-6 neon-text text-center border-b border-cyan-400/50 pb-3">${card.name} // ${card.title} [NODE ${card.id}]</h2>
+                                <h2 class="text-3xl font-extrabold mb-6 neon-text text-center border-b border-green-400/50 pb-3">${card.name} // ${card.title} [NODE ${card.id}]</h2>
                                 
                                 <div class="flex flex-col md:flex-row items-start space-y-6 md:space-y-0 md:space-x-8">
                                     
-                                    <!-- Card Image -->
-                                    <div class="flex-shrink-0 w-full md:w-auto flex justify-center">
+                                    <!-- Card Image --><div class="flex-shrink-0 w-full md:w-auto flex justify-center">
                                         <div class="w-40 h-64">
                                             ${cardSvg}
                                         </div>
                                     </div>
 
-                                    <!-- Full Data Spec -->
-                                    <div class="flex-grow">
-                                        <h3 class="text-xl font-bold mb-2 text-cyan-400">${t('coreData')}</h3>
-                                        <div class="flex flex-wrap gap-2 mb-6">
+                                    <!-- Full Data Spec --><div class="flex-grow">
+                                        <h3 class="text-xl font-bold mb-2 text-green-400">${t('coreData')}</h3>
+                                        <div class="flex flex-wrap gap-2 mb-6 break-words">
                                             ${card.keywords.map(keyword => 
-                                                `<span class="text-sm bg-cyan-800/30 text-cyan-300 px-3 py-1 rounded-full border border-cyan-600">${keyword}</span>`
+                                                `<span class="text-sm bg-green-800/30 text-green-300 px-3 py-1 rounded-full border border-green-600">${keyword}</span>`
                                             ).join('')}
                                         </div>
                                         
-                                        <h3 class="text-xl font-bold mb-2 text-fuchsia-400 border-t border-fuchsia-500/50 pt-4">${t('uprightTitle')}</h3>
-                                        <p class="text-gray-300 mb-4 text-sm">${card.meaningUp}</p>
+                                        <h3 class="text-xl font-bold mb-2 text-violet-400 border-t border-violet-500/50 pt-4">${t('uprightTitle')}</h3>
+                                        <p class="text-gray-300 mb-4 text-sm break-words">${card.meaningUp}</p>
 
-                                        <h3 class="text-xl font-bold mb-2 text-fuchsia-400 border-t border-fuchsia-500/50 pt-4">${t('reversedTitle')}</h3>
-                                        <p class="text-gray-300 text-sm">${card.meaningRev}</p>
+                                        <h3 class="text-xl font-bold mb-2 text-violet-400 border-t border-violet-500/50 pt-4">${t('reversedTitle')}</h3>
+                                        <p class="text-gray-300 text-sm break-words">${card.meaningRev}</p>
                                     </div>
                                 </div>
 
-                                <div class="mt-8 pt-4 border-t border-fuchsia-500/50 text-center">
+                                <div class="mt-8 pt-4 border-t border-violet-500/50 text-center">
                                     <button onclick="window.location.hash='#index'; handleRoute()" class="neon-btn py-2 px-6 text-lg rounded-lg">
                                         ${t('closeSpec')}
                                     </button>
@@ -634,21 +628,21 @@
 
             // Main Index Grid View
             const gridItems = arcana.map(card => `
-                <div class="card-panel p-4 rounded-lg text-center hover:shadow-cyan-400/50 hover:shadow-xl transition duration-300 cursor-pointer" onclick="window.location.hash='#index/${card.id}'; handleRoute()">
+                <div class="card-panel p-4 rounded-lg text-center hover:shadow-green-400/50 hover:shadow-xl transition duration-300 cursor-pointer" onclick="window.location.hash='#index/${card.id}'; handleRoute()">
                     <div class="flex justify-center mb-2">
                         <div class="w-24 h-40">
                             ${getCardSvg(card.id, true)}
                         </div>
                     </div>
-                    <p class="text-xs font-bold text-fuchsia-400">${card.name}</p>
+                    <p class="text-xs font-bold text-violet-400">${card.name}</p>
                     <p class="text-sm font-extrabold neon-text">${card.title}</p>
-                    <button class="text-xs mt-2 text-cyan-400 hover:text-cyan-200">${t('viewFullSpec')}</button>
+                    <button class="text-xs mt-2 text-green-400 hover:text-green-200">${t('viewFullSpec')}</button>
                 </div>
             `).join('');
 
             root.innerHTML = `
                 <div class="card-panel p-6 sm:p-8 rounded-xl w-full max-w-7xl">
-                    <h2 class="text-3xl font-extrabold mb-4 neon-text text-center border-b border-fuchsia-500/50 pb-3">${t('dataArchives')}</h2>
+                    <h2 class="text-3xl font-extrabold mb-4 neon-text text-center border-b border-violet-500/50 pb-3">${t('dataArchives')}</h2>
                     <p class="text-gray-400 mb-8 text-sm text-center">${t('selectNode')}</p>
                     
                     <div class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 sm:gap-6">
