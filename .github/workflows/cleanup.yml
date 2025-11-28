@@ -1,0 +1,46 @@
+name: cleanup.yml
+
+on:
+  push:
+    branches:
+      - '**'
+  workflow_dispatch:
+    # Allows manual triggering from the Actions tab
+    inputs:
+      days_to_keep:
+        description: 'Days-worth of runs to keep for each workflow'
+        required: true
+        default: '1'
+      minimum_runs_to_keep:
+        description: 'Minimum runs to keep for each workflow'
+        required: true
+        default: '1'
+      dry_run:
+        description: 'Set to true to only log targeted runs without deleting'
+        required: false
+        default: 'true'
+
+jobs:
+  delete_runs:
+    runs-on: ubuntu-latest
+    permissions:
+      # Required to delete workflow runs
+      actions: write
+      contents: read
+    
+    steps:
+      - name: Delete old workflow runs
+        uses: Mattraks/delete-workflow-runs@v2
+        with:
+          # Token must have 'workflow' scope (if using a PAT) 
+          # or the job must have 'actions: write' permission (using GITHUB_TOKEN)
+          token: ${{ github.token }}
+          
+          # Runs older than this number of days will be considered for deletion
+          retain_days: ${{ github.event.inputs.days_to_keep || 1 }}
+          
+          # The minimum number of runs to keep for each workflow, regardless of age
+          keep_minimum_runs: ${{ github.event.inputs.minimum_runs_to_keep || 1 }}
+          
+          # Only logs actions, does not perform any delete operations if true
+          dry_run: ${{ github.event.inputs.dry_run || false }}

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PHANTOM ORACLE // GHOST-NET</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Add jsQR library for QR code scanning -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="glitch-bg min-h-screen">
+    
+    <!-- Navigation Bar (Always visible) -->
+    <nav class="bg-gray-900 border-b border-violet-500/50 shadow-lg fixed w-full z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <!-- App Title (Left Side) -->
+                <div class="flex items-center">
+                    <span class="text-xl sm:text-2xl font-bold neon-text" id="app-title-nav">PHANTOM ORACLE // GHOST-NET</span>
+                </div>
+                
+                <!-- Links and Selector (Right Side) -->
+                <div class="flex space-x-4 items-center">
+                    <!-- Navigation Links Container: Now uses icons and hides text on mobile -->
+                    <div class="flex space-x-4 items-center">
+                        
+                        <!-- HOME_NODE Link -->
+                        <a href="#home" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
+                            <i class="fa-solid fa-satellite-dish text-base sm:text-lg"></i>
+                            <span class="hidden sm:inline" id="nav-text-homeNode"></span>
+                        </a>
+
+                        <!-- START_READING Link -->
+                        <a href="#reading" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
+                            <i class="fa-solid fa-wand-magic-sparkles text-base sm:text-lg"></i>
+                            <span class="hidden sm:inline" id="nav-text-startReading"></span>
+                        </a>
+
+                        <!-- CARD_INDEX Link -->
+                        <a href="#index" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
+                            <i class="fa-solid fa-database text-base sm:text-lg"></i>
+                            <span class="hidden sm:inline" id="nav-text-cardIndex"></span>
+                        </a>
+
+                        <!-- QR SCANNER Link -->
+                        <a href="#scanner" class="flex items-center space-x-1 sm:space-x-2 text-xs sm:text-sm font-medium hover:text-green-400 transition duration-150 ease-in-out text-violet-400 nav-link">
+                            <i class="fa-solid fa-qrcode text-base sm:text-lg"></i>
+                            <span class="hidden sm:inline" id="nav-text-qrScanner"></span>
+                        </a>
+                    </div>
+                    
+                    <!-- Language Selector: Always visible -->
+                    <select onchange="setLanguage(this.value)" id="language-select" 
+                            class="bg-gray-800 text-green-400 border border-violet-500 rounded-md text-sm p-1 focus:ring-green-400 focus:border-green-400">
+                        <option value="en">EN</option>
+                        <option value="es">ES</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Area - Reduced mobile padding (p-2) and ensured overflow is hidden -->
+    <main id="app-root" class="pt-20 p-2 md:p-8 flex justify-center items-start min-h-[calc(100vh-80px)] overflow-x-hidden">
+        <!-- Content will be injected here by JavaScript -->
+    </main>
+
+    <!-- Modal for Error/Message Handling (A sleek, non-alert box) -->
+    <div id="app-modal" class="hidden fixed inset-0 bg-black bg-opacity-70 z-50 flex items-center justify-center p-4" onclick="hideModal()">
+        <div class="card-panel p-6 rounded-lg w-full max-w-sm" onclick="event.stopPropagation()">
+            <h3 id="modal-title" class="text-xl font-bold mb-3 border-b border-green-400 pb-2 neon-text"></h3>
+            <p id="modal-content" class="text-gray-300"></p>
+            <button class="mt-4 w-full neon-btn py-2 rounded-md text-sm" onclick="hideModal()"></button>
+        </div>
+    </div>
+    <script src="lib/jsQR.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
